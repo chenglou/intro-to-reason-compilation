@@ -15,7 +15,23 @@
 #        In order to make `ocamlc` understand that `.re` is a normal source file
 #        equivalent to a `.ml`, we pass the `impl` flag, meaning "this is an
 #        implementation file" (as opposed to an interface file, `mli/rei`).
-ocamlc -pp refmt -o _build/out -impl src/test.re
+# -I: "search in that directory for dependencies". You may wonder why this is
+#     necessary, given that we've already passed both files to the compiler.
+#     Doesn't it already know where the sources are? It doesn't. In reality,
+#     we're really just compiling two files independently, one another another,
+#     in the specified order. You can imagine a parallelized build system which
+#     invokes two separate `ocamlc` commands, one for each `.re` respectively.
+#     In this case, the compiler wouldn't know about these source files since
+#     they're not compiled together anymore.
+#     The order of compilation is important! if you place `-impl src/test.re`
+#     before `-impl src/myDep.re`, you'll get an error saying "Reference to
+#     undefined global `MyDep'". `myDep.re` has to be compiled first. We're
+#     effectively manually soring the dependency graph (a topological sort)
+#     right now. We'll change that soon.
+
+# Example of wrong compilation order:
+# ocamlc -pp refmt -o _build/out -I src/ -impl src/test.re -impl src/myDep.re
+ocamlc -pp refmt -o _build/out -I src/ -impl src/myDep.re -impl src/test.re
 
 # Run!
 _build/out
