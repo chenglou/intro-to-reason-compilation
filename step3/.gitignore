@@ -1,0 +1,8 @@
+.DS_Store
+out
+
+# Files such as `foo.cmi` and `bar.cmo` are compiled artifacts. You don't have
+# to know what they do at the moment; if you're curious, check
+# https://github.com/facebook/reason/wiki/OCaml-Ecosystem-Extensions-List
+
+*.cm*

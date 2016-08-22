@@ -8,7 +8,7 @@ See the artifacts in `src/`? `myDep.cmo`, and all. Do the following:
 
 ```sh
 rm -f src/*.cm*
-ocamlc -pp refmt -o _build/out -I src/ -impl src/myDep2.re -impl src/myDep.re -impl src/test.re
+ocamlc -pp refmt -o ./out -I src/ -impl src/myDep2.re -impl src/myDep.re -impl src/test.re
 ```
 
 You'll get the error message:
@@ -22,13 +22,13 @@ If you've read the comments in `run.sh`, you'd know why this happens. We've comp
 
 ```sh
 rm -f src/*.cm*
-ocamlc -pp refmt -o _build/out -I src/ -impl src/myDep.re -impl src/myDep2.re -impl src/test.re
+ocamlc -pp refmt -o out -I src/ -impl src/myDep.re -impl src/myDep2.re -impl src/test.re
 ```
 
 Everything fine. Now, *without* cleaning the stale artifacts, recompile in the wrong order!
 
 ```sh
-ocamlc -pp refmt -o _build/out -I src/ -impl src/myDep2.re -impl src/myDep.re -impl src/test.re
+ocamlc -pp refmt -o ./out -I src/ -impl src/myDep2.re -impl src/myDep.re -impl src/test.re
 ```
 
 Output:
@@ -42,6 +42,6 @@ Why is the error different now?
 
 `ocamlc` has a compilation step, and a linking step, roughly speaking. Until now, we've used some `ocamlc` shorthands to do both in one shot.
 
-The compilation step takes each file and compiles. TODO: explanation
+The compilation step takes each file and compiles. *TODO: explain why this happens*.
 
 Moral of the story: use a good build system ([*cough*](https://github.com/chenglou/jengaboot)) or debug the dependency graph yourself... =)
