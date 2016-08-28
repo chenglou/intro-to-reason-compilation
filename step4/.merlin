@@ -1,0 +1,17 @@
+# Setup guide:
+# https://github.com/the-lambda-church/merlin/wiki/project-configuration
+
+# B for built artifacts. In our case they reside alongside the source folder
+B src
+
+# S for source
+S src
+
+# Merlin picks up the artifacts of the compilation, so **don't forget** to
+# compile your project at least once (through `run.sh` naturally) in order to
+# have these artifacts in the first place!
+
+# **Note**: this also means that, when you add a new file, you need to compile
+# it once to generates the new artifacts for Merlin. Practically, if you have a
+# watcher installed, it'll only take a few seconds top for the change to
+# "propagate" to your editor's plugin.
