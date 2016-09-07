@@ -44,4 +44,4 @@ Why is the error different now?
 
 The compilation step takes each file and compiles. *TODO: explain why this happens*.
 
-Moral of the story: use a good build system ([*cough*](https://github.com/chenglou/jengaboot)) or debug the dependency graph yourself... =)
+Moral of the story: use a good build system ([*cough*](https://github.com/reasonml/rebel)) or debug the dependency graph yourself... =)
