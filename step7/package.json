@@ -1,0 +1,18 @@
+{
+  "name": "step7",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/test.re",
+  "dependencies": {
+    "reason-js": "github:chenglou/reason-js#918a2a0e4121104f8eb546dd03f681f417095c59"
+  },
+  "devDependencies": {
+    "bs-platform": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "private": true,
+  "license": "ISC"
+}
