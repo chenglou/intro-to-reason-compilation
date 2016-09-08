@@ -1,4 +1,4 @@
-# 5 - Add a Third-Party Dependency
+# 6 - Add a Third-Party Dependency
 
 Thanks to our previous step, adding a new dependency is easy.
 
