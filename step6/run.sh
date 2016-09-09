@@ -24,7 +24,8 @@ for source in $selfSortedFiles
 do
   destination=$(echo $source | sed "s/src/_build\/self/" | sed "s/\.re$//")
   # should give: _build/self/myDep then _build/self/myDep2 then _build/self/test
-  ocamlc -g -bin-annot -pp refmt -o $destination -I _build/muffin -I _build/self -c -impl $source
+  ocamlc -g -bin-annot -pp refmt -o $destination -I _build/muffin \
+    -I _build/self -c -impl $source
 done
 
 # Link. Note that we need to pass *all* the cmos in order, including third-party
