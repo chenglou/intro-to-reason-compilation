@@ -3,7 +3,7 @@
 # clean
 rm -f src/*.cm*
 
-# shellscript-fu time!
+# shellscript-fun time!
 sortedFiles=$(ocamldep -pp refmt -sort -ml-synonym .re src/*.re)
 # should give: `src/myDep.re src/myDep2.re src/test.re`
 argsForOcaml=$(echo "$sortedFiles" | sed "s/src\//-impl src\//g")
