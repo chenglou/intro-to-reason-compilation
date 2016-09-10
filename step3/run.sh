@@ -6,7 +6,7 @@
 
 rm -f src/*.cm*
 
-# Introducing `ocamldep`! It's a utility that ships with OCaml, which analyses
+# Introducing `ocamldep`! It's an utility that ships with OCaml, which analyses
 # the files and outputs them in the order of dependency (aka, a topological
 # sort). If A depends on B then A will certainly come after B.
 
@@ -15,7 +15,7 @@ rm -f src/*.cm*
 # -ml-synonym: akin to `ocamlc`'s `-impl`. "If your source files don't end with
 #              `ml`, tell me what they end with."
 
-# shellscript-fu time!
+# shellscript-fun time!
 sortedFiles=$(ocamldep -pp refmt -sort -ml-synonym .re src/*.re)
 # should give: `src/myDep.re src/myDep2.re src/test.re`
 argsForOcaml=$(echo "$sortedFiles" | sed "s/src\//-impl src\//g")
