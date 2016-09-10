@@ -14,7 +14,7 @@
 # -I: "search in that directory for dependencies". You may wonder why this is
 #     necessary, given that we've already passed both files to the compiler.
 #     Doesn't it already know where the sources are? It doesn't. In reality,
-#     we're really just compiling two files independently, one and another,
+#     we're really just compiling two files independently, one after another,
 #     in the specified order. You can imagine a parallelized build system which
 #     invokes two separate `ocamlc` commands, one for each `.re` respectively.
 #     In this case, the compiler wouldn't know about these source files since
