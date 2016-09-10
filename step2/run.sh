@@ -1,7 +1,7 @@
 # Explanations of compiler flags (when in doubt, there's always `ocamlc --help`)
 
 # -pp: before processing the source file, pass it through a preprocessor. This
-#      is a powerful that's at the heart of how the Reason syntax transform
+#      is a powerful feature that's at the heart of how the Reason syntax transform
 #      works. We're basically taking a raw text file and piping it through our
 #      custom lexer & parser, before handling over the valid OCaml abstract
 #      syntax tree for actual compilation.
