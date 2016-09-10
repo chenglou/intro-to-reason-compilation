@@ -6,7 +6,7 @@
 
 rm -f src/*.cm*
 
-# Introducing `ocamldep`! It's an utility that ships with OCaml, which analyses
+# Introducing `ocamldep`! It's a utility that ships with OCaml, which analyses
 # the files and outputs them in the order of dependency (aka, a topological
 # sort). If A depends on B then A will certainly come after B.
 
