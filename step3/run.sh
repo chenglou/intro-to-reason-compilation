@@ -15,7 +15,7 @@ rm -f src/*.cm*
 # -ml-synonym: akin to `ocamlc`'s `-impl`. "If your source files don't end with
 #              `ml`, tell me what they end with."
 
-# shellscript-fun time!
+# shellscript-fu time!
 sortedFiles=$(ocamldep -pp refmt -sort -ml-synonym .re src/*.re)
 # should give: `src/myDep.re src/myDep2.re src/test.re`
 argsForOcaml=$(echo "$sortedFiles" | sed "s/src\//-impl src\//g")
