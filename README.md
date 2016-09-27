@@ -1,4 +1,4 @@
-# Getting Started With Reason
+# Intro to Reason Compilation
 
 [Reason](http://facebook.github.io/reason) is a syntax and tooling ecosystem for OCaml. The OCaml's compilation and build system can get rather sophisticated; This repository serves as a tutorial that explains some of the intricacies. It's always nice to know what really happens under the hood!
 
