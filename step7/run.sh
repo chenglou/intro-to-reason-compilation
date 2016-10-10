@@ -16,7 +16,8 @@ mkdir -p _build/reason-js
 
 # Note: we're using the package name "self" because from our point of view,
 # node_modules is really just another folder filled with files. This produces
-# the right `require` calls in the output.
+# the right `require` calls in the output. Again, see the BS docs and feel free
+# to fiddle with these options!
 node_modules/bs-platform/bin/bsc.exe -g -bin-annot -pp refmt -bs-package-name self \
   -bs-package-output commonjs:_build/reason-js -o _build/reason-js/ReasonJs \
   -c -impl node_modules/reason-js/src/ReasonJs.re
@@ -27,6 +28,9 @@ mkdir -p _build/self
 # uses some ppx preprocessors (basically, macros with special treatment).
 selfSortedFiles=$(ocamldep -ppx ./node_modules/bs-platform/bin/bsppx.exe -pp refmt -sort -ml-synonym .re src/*.re)
 # should give: src/myDep.re src/myDep2.re src/test.re
+# The flag -bs-files in `bsc` sorts the sources & compiles them, allowing us to
+# avoid `ocamldep` in the future. It currently doesn't work with Reason files:
+# https://github.com/bloomberg/bucklescript/issues/549
 
 for source in $selfSortedFiles
 do
