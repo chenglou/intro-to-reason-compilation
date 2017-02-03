@@ -20,14 +20,14 @@ mkdir -p _build/self
 # Feel free to explore this vast domain! One link to get you started:
 # stackoverflow.com/questions/9843378/ocaml-module-types-and-separate-compilation
 
-selfSortedFiles=$(ocamldep -pp refmt -sort -ml-synonym .re src/*.re)
+selfSortedFiles=$(ocamldep -pp "refmt --print binary" -sort -ml-synonym .re src/*.re)
 # should give: src/myDep.re src/myDep2.re src/test.re
 for source in $selfSortedFiles
 do
   destination=$(echo $source | sed "s/src/_build\/self/" | sed "s/\.re$//")
   # should give: _build/self/myDep then _build/self/myDep2 then _build/self/test
   # The only new flag here is `-c`, which says "compile, but don't link".
-  ocamlc -g -bin-annot -pp refmt -o $destination -I _build/self -c -impl $source
+  ocamlc -g -bin-annot -pp "refmt --print binary" -o $destination -I _build/self -c -impl $source
 done
 
 # 2. Linking.

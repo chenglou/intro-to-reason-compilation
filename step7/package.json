@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/test.re",
   "dependencies": {
-    "reason-js": "^0.0.14"
+    "reason-js": "0.0.15"
   },
   "devDependencies": {
     "bs-platform": "^1.4.1"

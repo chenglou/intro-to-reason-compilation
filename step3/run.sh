@@ -16,13 +16,13 @@ rm -f src/*.cm*
 #              `ml`, tell me what they end with."
 
 # shellscript-fu time!
-sortedFiles=$(ocamldep -pp refmt -sort -ml-synonym .re src/*.re)
+sortedFiles=$(ocamldep -pp "refmt --print binary" -sort -ml-synonym .re src/*.re)
 # should give: `src/myDep.re src/myDep2.re src/test.re`
 argsForOcaml=$(echo "$sortedFiles" | sed "s/src\//-impl src\//g")
 # should give: `-impl src/myDep.re -impl src/myDep2.re -impl src/test.re`
 
 # The flags are the same ones used in step 2.
-ocamlc -pp refmt -o ./out -I src/ $argsForOcaml
+ocamlc -pp "refmt --print binary" -o ./out -I src/ $argsForOcaml
 
 # Run!
 ./out

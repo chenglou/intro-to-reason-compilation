@@ -4,7 +4,7 @@
 rm -f src/*.cm*
 
 # shellscript-fu time!
-sortedFiles=$(ocamldep -pp refmt -sort -ml-synonym .re src/*.re)
+sortedFiles=$(ocamldep -pp "refmt --print binary" -sort -ml-synonym .re src/*.re)
 # should give: `src/myDep.re src/myDep2.re src/test.re`
 argsForOcaml=$(echo "$sortedFiles" | sed "s/src\//-impl src\//g")
 # should give: `-impl src/myDep.re -impl src/myDep2.re -impl src/test.re`
@@ -20,7 +20,7 @@ argsForOcaml=$(echo "$sortedFiles" | sed "s/src\//-impl src\//g")
 #             Merlin can use to provide you e.g. autocomplete and
 #             jump-to-definition.
 
-ocamlc -g -bin-annot -pp refmt -o ./out -I src/ $argsForOcaml
+ocamlc -g -bin-annot -pp "refmt --print binary" -o ./out -I src/ $argsForOcaml
 
 # Run!
 ./out
