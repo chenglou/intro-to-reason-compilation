@@ -44,4 +44,4 @@ Why is the error different now?
 
 The compilation step takes each file and compiles. *TODO: explain why this happens*.
 
-Moral of the story: use a good build system ([*cough*](http://bloomberg.github.io/bucklescript/Manual.html#_bucklescript_build_system_code_bsb_code)) or debug the dependency graph yourself... =)
+Moral of the story: use a good build system ([*cough*](http://bucklescript.github.io/bucklescript/Manual.html#_bucklescript_build_system_code_bsb_code)) or debug the dependency graph yourself... =)

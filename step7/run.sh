@@ -9,10 +9,10 @@ rm -rf _build
 # Our third-party dependency has a single file. For the sake of simplicity,
 # we'll remove the previous step's looping logic. For reference, we still
 # have the same loop logic below for our own files anyway.
-mkdir -p _build/reason-js
+mkdir -p _build/bs-globs
 # Notice that we've switched away `ocamlc` for `bsc` which works similarly to
 # the former. There are a few extra flags here; the BS documentation explains
-# them well: bloomberg.github.io/bucklescript/Manual.html#__bs_package_name
+# them well: bucklescript.github.io/bucklescript/Manual.html#__bs_package_name
 
 
 

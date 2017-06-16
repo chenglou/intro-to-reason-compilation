@@ -7,7 +7,7 @@
   anchoring point to know where the root of the project is. Since we're learning
   the fundamentals, we'll only be using bsconfig for the latter purpose. For the
   former purpose, see
-  http://bloomberg.github.io/bucklescript/Manual.html#_bucklescript_build_system_code_bsb_code */
+  http://bucklescript.github.io/bucklescript/Manual.html#_bucklescript_build_system_code_bsb_code */
 
 {
   "name" : "step7",
