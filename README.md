@@ -10,6 +10,4 @@ If you feel certain steps aren't clear, or if you'd like to request a new step, 
 
 ## Requirement
 
-Have Reason >=1.13.5 installed. See [this help page](http://facebook.github.io/reason/gettingStarted.html#javascript-workflow-editor-setup-global-utilities)
-Basically, `npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.5`
-
+Have Reason >=1.13.5 installed. See [this help page](http://facebook.github.io/reason/gettingStarted.html#getting-started-editor-setup-global-utilities)
