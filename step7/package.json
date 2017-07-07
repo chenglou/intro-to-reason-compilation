@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/test.re",
   "dependencies": {
-    "reason-js": "https://github.com/BuckleTypes/bs-glob.git#1a007261b53a71ada184a936c23551e06e49f810"
+    "reason-js": "0.0.15"
   },
   "devDependencies": {
     "bs-platform": "^1.7.5"
