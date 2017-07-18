@@ -4,7 +4,7 @@ Check point! This step will set up some common tools you'd use during Reason's d
 
 - [Merlin](https://github.com/the-lambda-church/merlin): check out the description [here](https://github.com/the-lambda-church/merlin/wiki/project-configuration). We're writing a small `.merlin` file in this step. Read through the comments in the file; they're helpful.
 
-- Reason has [editor support](http://facebook.github.io/reason/tools.html#merlin) for Atom, Vim, Emacs, etc. using Merlin. They're very nice-to-haves.
+- Reason has [editor support](https://reasonml.github.io/guide/tools#editor-integration) for Atom, Vim, Emacs, etc. using Merlin. They're very nice-to-haves.
 
 - Ultimately, Reason will provide you an opinionated (but optional) build system that takes care of generating everything you're seeing here & more. Our goal for the opinionated build system is to:
   - Enable a hassle-free onboarding experience, so that people don't have to fit the whole ecosystem & tooling & workflow in their head before starting their first `.re` file.
