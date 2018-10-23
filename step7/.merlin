@@ -3,7 +3,7 @@
 
 # B for built artifacts.
 B _build/self
-B _build/reason-js
+# B _build/reason-js # reason-js is outdated
 
 # BuckleScript's artifacts are installed upon package installation; they resides
 # here. Merlin's jump-to-location can transport you to these locations!
@@ -11,7 +11,7 @@ B node_modules/bs-platform/lib/ocaml
 
 # S for source
 S src
-S node_modules/reason-js/src
+# S node_modules/reason-js/src # reason-js is outdated
 
 # TODO: put BuckleScript ppx here too
 

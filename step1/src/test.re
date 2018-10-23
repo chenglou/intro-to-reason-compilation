@@ -1,1 +1,1 @@
-print_endline "hi";
+print_endline("hi");
