@@ -1,1 +1,1 @@
-let secret = MyDep.secret ^ " world";
+let secret = MyDep.secret ++ " world";

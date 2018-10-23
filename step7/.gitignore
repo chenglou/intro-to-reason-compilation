@@ -4,3 +4,5 @@ _build/
 
 # New item. Ignore our dependencies that we can `npm install`
 node_modules/
+
+package-lock.json

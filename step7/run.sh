@@ -9,7 +9,7 @@ rm -rf _build
 # Our third-party dependency has a single file. For the sake of simplicity,
 # we'll remove the previous step's looping logic. For reference, we still
 # have the same loop logic below for our own files anyway.
-mkdir -p _build/reason-js
+# mkdir -p _build/reason-js  # reason-js is outdated
 # Notice that we've switched away `ocamlc` for `bsc` which works similarly to
 # the former. There are a few extra flags here; the BS documentation explains
 # them well: bucklescript.github.io/bucklescript/Manual.html#__bs_package_name
@@ -20,16 +20,16 @@ mkdir -p _build/reason-js
 # node_modules is really just another folder filled with files. This produces
 # the right `require` calls in the output. Again, see the BS docs and feel free
 # to fiddle with these options!
-node_modules/bs-platform/bin/bsc.exe -g -bin-annot -pp "refmt --print binary" -bs-package-name self \
-  -bs-package-output commonjs:_build/reason-js -o _build/reason-js/ReasonJs \
-  -c -impl node_modules/reason-js/src/reasonJs.re
+# node_modules/bs-platform/lib/bsc.exe -g -bin-annot -pp "refmt --print binary" -bs-package-name self \
+#   -bs-package-output commonjs:_build/reason-js -o _build/reason-js/ReasonJs \
+#   -c -impl node_modules/reason-js/src/reasonJs.re
 
 # Now build ourselves. Same as previous step.
 mkdir -p _build/self
 # We're adding the `-ppx` flag here (the rest is the same), because BuckleScript
 # uses some ppx preprocessors (basically, macros with special treatment).
-selfSortedFiles=$(ocamldep -ppx ./node_modules/bs-platform/bin/bsppx.exe -pp "refmt --print binary" -sort -ml-synonym .re src/*.re)
-# should give: src/myDep.re src/myDep2.re src/test.re
+selfSortedFiles=$(ocamldep -ppx ./node_modules/bs-platform/lib/bsppx.exe -pp "refmt --print binary" -sort -ml-synonym .re src/*.re)
+# should give: src/bsCheatsheet.re src/myDep.re src/myDep2.re src/test.re
 # The flag -bs-files in `bsc` sorts the sources & compiles them, allowing us to
 # avoid `ocamldep` in the future. It currently doesn't work with Reason files:
 # https://github.com/bloomberg/bucklescript/issues/549
@@ -38,8 +38,8 @@ for source in $selfSortedFiles
 do
   destination=$(echo $source | sed "s/src/_build\/self/" | sed "s/\.re$//")
   # should give: _build/self/myDep then _build/self/myDep2 then _build/self/test
-  node_modules/bs-platform/bin/bsc.exe -g -bin-annot -pp "refmt --print binary" -bs-package-name self \
-    -bs-package-output commonjs:_build/self -I _build/self -I _build/reason-js \
+  node_modules/bs-platform/lib/bsc.exe -g -bin-annot -pp "refmt --print binary" -bs-package-name self \
+    -bs-package-output commonjs:_build/self -I _build/self  \
     -o $destination -c -impl $source
 done
 
