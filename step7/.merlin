@@ -23,3 +23,17 @@ S node_modules/reason-js/src
 # it once to generates the new artifacts for Merlin. Practically, if you have a
 # watcher installed, it'll only take a few seconds top for the change to
 # "propagate" to your editor's plugin.
+
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open Step7
+FLG -ppx /Users/prisc_000/working/DEMOS/introto/step7/node_modules/bs-platform/lib/bsppx.exe
+S /Users/prisc_000/working/DEMOS/introto/step7/node_modules/bs-platform/lib/ocaml
+B /Users/prisc_000/working/DEMOS/introto/step7/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -color always
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /Users/prisc_000/working/DEMOS/introto/step7/node_modules/bs-webapi/lib/ocaml
+B /Users/prisc_000/working/DEMOS/introto/step7/node_modules/bs-webapi/lib/ocaml
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}

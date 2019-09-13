@@ -2,5 +2,5 @@
 
 /* We now have 2 dependencies, where MyDep2 also depends on myDep. So the compilation order should be [myDep,
    myDep2, test] */
-print_endline MyDep.secret;
-print_endline MyDep2.secret;
+print_endline( MyDep.secret);
+print_endline( MyDep2.secret);
