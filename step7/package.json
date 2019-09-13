@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/test.re",
   "dependencies": {
-    "reason-js": "0.0.15"
-  },
+    "bs-webapi": "0.15.4"  },
   "devDependencies": {
     "bs-platform": "^5.0.6"
   },

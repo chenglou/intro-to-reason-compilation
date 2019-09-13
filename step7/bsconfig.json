@@ -9,6 +9,21 @@
   former purpose, see
   http://bucklescript.github.io/bucklescript/Manual.html#_bucklescript_build_system_code_bsb_code */
 
+
 {
   "name" : "step7",
+  "refmt": 3,
+  "version": "1.0.1",
+  "sources": [
+    {
+      "dir": "src"
+    }
+  ],
+  "package-specs": [{
+    "module": "commonjs",
+    "in-source": true
+  }],
+  "bs-dependencies":["bs-webapi"],
+  "suffix": ".bs.js",
+  "namespace": true
 }
